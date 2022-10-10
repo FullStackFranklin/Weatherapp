@@ -6,13 +6,24 @@
   
   body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("allfourseasons.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 header {
     background-color: rgb(175, 224, 152);
     padding: 30px;
     text-align: center;
+    opacity: 0.6;
     font-size: 35px;
     color: white;
   }
-  
+  .jumbotron {
+    float: right;
+    padding: 40px;
+    width: 60%;
+    background-color: rgb(209, 209, 16);
+    opacity: 0.6;
+    height: 240px; /* only for demonstration, should be removed */
+  }
