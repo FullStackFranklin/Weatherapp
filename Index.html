@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="weather.css">
+    
     <title>Weather App</title>
 </head>
 <body>
@@ -13,19 +14,34 @@
         <h2>Weather App</h2>
       </header>
       <h1>Search for a City:</h1>
-      <form action="/form/submit" method="GET"> 
-        <input type="text" name="text" class="search" placeholder="Search here!">
-        <input type="submit" name="submit" class="submit" value="Search">
-      </form>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">city: Atlanta</h1>
-          <p class="humidity">humidity:</p>
-          <p class="temp">temperature:</p>
-          <p class="wind">wind:</p>
+      <div class="MainContainer">
+        <div class="LeftContainer">
+          <input type="text" name="text" id="search" placeholder="Enter City Name">
+          <input type="button" name="submit" id="submit" value="Search">
+          <div class="historyContainer">
+            <ul>
+              <li>Altanta</li>
+              <li>Ohio</li>
+              <li>Los Angeles</li>
+            </ul>
+          </div>
+        </div>
+        
+      
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">City: Name of Selected City</h1>
+            <p class="humidity">Humidity:</p>
+            <p class="temp">Temperature:</p>
+            <p class="wind">Wind:</p>
+          </div>
+          
         </div>
       </div>
+      
+    
 
 </body>
 <script src="weather.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </html>
