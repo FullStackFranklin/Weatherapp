@@ -108,8 +108,6 @@ function setMainData(sCityName, nHumidity, nTemp, nWind){
 
 
 
-
-
 //Loads history on page ready
 loadHistory();
 
