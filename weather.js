@@ -46,3 +46,7 @@ function createHistoryItem(sCityName){
     liComp.appendChild(document.createTextNode(sCityName))//Add text to LI
     ulCityList.appendChild(liComp);//ADD li to Ul
 }
+//Cleans Ul element
+function cleanList(){
+    ulCityList.innerHTML='';
+}
