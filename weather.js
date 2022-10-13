@@ -91,6 +91,14 @@ function processForecast(sCityName, aListForecast){
         nWind = oMainData.wind.speed;
     setMainData(sCityName, nHumidity, nTemp, nWind);
 }
+//set the information in page
+function setMainData(sCityName, nHumidity, nTemp, nWind){
+    document.getElementById('humidity').innerHTML ='Humidity: '+nHumidity+' %';
+    document.getElementById('temp').innerHTML ='Temperature: '+nTemp+' °F';
+    document.getElementById('wind').innerHTML ='Wind: '+nWind+' MPH';
+    document.getElementById('CityName').innerHTML =sCityName;
+}
+
 
 
 
