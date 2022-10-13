@@ -19,42 +19,28 @@
           <input type="text" name="text" id="search" placeholder="Enter City Name">
           <input type="button" name="submit" id="submit" value="Search">
           <div class="historyContainer">
-            <ul>
-              <li>Altanta</li>
-              <li>Ohio</li>
-              <li>Los Angeles</li>
+            <ul id="historyList">
             </ul>
           </div>
         </div>
         
-    <!--User information will populate to show current data -->
+      
         <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">City: Name of Selected City</h1>
-            <p class="humidity">Humidity:</p>
-            <p class="temp">Temperature:</p>
-            <p class="wind">Wind:</p>
+          <div class="MainDataCont">
+            <h1 class="display-4">City: <span id="CityName"></span></h1>
+            <p id="humidity">Humidity:</p>
+            <p id="temp">Temperature:</p>
+            <p id="wind">Wind:</p>
           </div>
-          <!--cards should populate with 5 day forecast weather data-->
           <div id="ContainCards" class="Contain-Forecast">
-            <div class="card">
-              <div class="Forcast_Date">10/13/2022</div>
-              <div class="Forcast_Icon">Sun</div>
-              <div class="Forcast_Temp">Temp: 63.55 F°</div>
-              <div class="Forcast_Wind">Wind: 3.94MPH</div>
-              <div class="Forcast_Humidity">Humidity: 69%</div>
-            </div>
-            <div class="card">
-              <div class="Forcast_Date">10/14/2022</div>
-              <div class="Forcast_Icon">Sun</div>
-              <div class="Forcast_Temp">Temp: 63.55 F°</div>
-              <div class="Forcast_Wind">Wind: 3.94MPH</div>
-              <div class="Forcast_Humidity">Humidity: 69%</div>
-            </div>
+            
+          </div>
+          
         </div>
       </div>
+      
+    
 
 </body>
 <script src="weather.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </html>
