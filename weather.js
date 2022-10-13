@@ -83,6 +83,9 @@ function readCityForecast(sCityName, nLat, nLong) {
         createForecastCard(aListForecast);
     });
 }
+//Process data sent by the api
+function processForecast(sCityName, aListForecast){
+    let oMainData = aListForecast[0],
 
 
 
