@@ -56,3 +56,22 @@ function removeOldHistory(){
     setLocalStorage();
     loadHistory();
 }
+//Store information on LS
+function setLocalStorage(){
+    localStorage.setItem('CityH', aCityList);
+}
+//API will read and load lat and long data
+function readCityLocation(sCityName) {
+    let nLat, nLong;
+    sUrlApi='http://api.openweathermap.org/geo/1.0/direct?q='+sCityName+'&limit=1&appid='+sApiKey;
+    fetch(sUrlApi)
+    .then(function(response){ return response.json()})
+    .then(function(aResp){
+        if(aResp.length>0){//if the api found the information
+            nLat = aResp[0].lat;
+            nLong = aResp[0].lon;
+            storeUserHistory(sCityName);
+            readCityForecast(sCityName, nLat, nLong);
+        }
+    });
+}
