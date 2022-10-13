@@ -1,3 +1,10 @@
+let aCityList = [];//store array search list
+const ulCityList = document.getElementById('historyList');//unordered list city data
+
+
+
+
+
 document.getElementById('submit').addEventListener("click", function () {
     const sCityName = document.getElementById("search").value;
     validateUserInput(sCityName);
@@ -14,3 +21,4 @@ function validateUserInput(sCityName) {
 function storeUserHistory(sCityName){
 //console.log(sCityName);
 }
+
