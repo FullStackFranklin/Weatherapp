@@ -86,6 +86,11 @@ function readCityForecast(sCityName, nLat, nLong) {
 //Process data sent by the api
 function processForecast(sCityName, aListForecast){
     let oMainData = aListForecast[0],
+    nHumidity = oMainData.main.humidity,
+        nTemp = oMainData.main.temp,
+        nWind = oMainData.wind.speed;
+    setMainData(sCityName, nHumidity, nTemp, nWind);
+}
 
 
 
