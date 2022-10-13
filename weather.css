@@ -45,3 +45,13 @@ header {
     text-align: center;
     opacity: 0.8;
   }
+  .Contain-Forecast{
+    display: flex;
+  }
+  
+  .Contain-Forecast .card{
+    padding: 12px;
+    background-color: #6d67d9;
+    border: 1px solid black;
+    margin-left: 10px;
+  }
