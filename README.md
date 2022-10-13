@@ -1,6 +1,5 @@
 # Weatherapp
-
-
+![image](https://user-images.githubusercontent.com/107124830/195657970-12986ee2-0954-4842-a3fe-b0129a7a8819.png)
 
 
 
