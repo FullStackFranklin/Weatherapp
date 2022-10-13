@@ -1,7 +1,7 @@
 let aCityList = [];//store array search list
 const ulCityList = document.getElementById('historyList');
 const nMaxHistoryStored=5;
-const sApiKey='b770f57e978766f2053f83e0edd11415';
+const sApiKey='2679b512ffea0aa250ddb289f6418fe6';
 let sUrlApi;
 document.getElementById('submit').addEventListener("click", function () {
     const sCityName = document.getElementById("search").value;
