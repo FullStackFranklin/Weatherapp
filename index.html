@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/jpg" href="https://www.wallpapers4u.org/wp-content/uploads/planet_earth_stars_space_air_atmosphere_universe_94953_1920x1080.jpg">
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+        <h2>Weather App</h2>
+      </header>
+      <h1>Search for a City:</h1>
+      <div class="MainContainer">
+        <div class="LeftContainer">
+          <input type="text" name="text" id="search" placeholder="Enter City Name">
+          <input type="button" name="submit" id="submit" value="Search">
+          <div class="historyContainer">
+            <ul id="historyList">
+            </ul>
+          </div>
+        </div>     
+        <div class="jumbotron jumbotron-fluid">
+          <div class="MainDataCont">
+            <h1 class="display-4">City: <span id="CityName"></span></h1>
+            <p id="humidity">Humidity:</p>
+            <p id="temp">Temperature:</p>
+            <p id="wind">Wind:</p>
+          </div>
+          <div id="ContainCards" class="Contain-Forecast">
+            
+          </div>
+          
+        </div>
+      </div>
+</body>
+<script src="weather.js"></script>
+</html>
