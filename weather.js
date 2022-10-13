@@ -50,3 +50,9 @@ function createHistoryItem(sCityName){
 function cleanList(){
     ulCityList.innerHTML='';
 }
+//Removes oldest search city
+function removeOldHistory(){
+    aCityList.shift();
+    setLocalStorage();
+    loadHistory();
+}
