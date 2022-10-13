@@ -40,3 +40,9 @@ function loadHistory() {
         createHistoryItem(sCityNameLoop);
     }
 }
+//creates element for city name
+function createHistoryItem(sCityName){
+    let liComp = document.createElement('li');//create Li
+    liComp.appendChild(document.createTextNode(sCityName))//Add text to LI
+    ulCityList.appendChild(liComp);//ADD li to Ul
+}
