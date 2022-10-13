@@ -32,5 +32,11 @@ function storeUserHistory(sCityName){
 document.getElementById("search").value='';
 document.getElementById("search").focus();
 }
-
-
+//loads city history
+function loadHistory() {
+    aCityList = localStorage.getItem('CityH') ? localStorage.getItem('CityH').split(',') : [];
+    for (let index = aCityList.length-1; index >= 0 ; index--) {//for statement to reverse loop to create elements
+        const sCityNameLoop = aCityList[index];
+        createHistoryItem(sCityNameLoop);
+    }
+}
