@@ -23,13 +23,14 @@ function validateUserInput(sCityName) {
 function storeUserHistory(sCityName){
 //console.log(sCityName);
     if(aCityList.length >= nMaxHistoryStored) //validate history length
-        removeOldHistory();
+        removeOldHistory(); 
         aCityList.push(sCityName); //add to list array
         setLocalStorage();
         cleanList();
-        loadHistory();
-
-        
-
+        loadHistory();   
+//clears and focus search input
+document.getElementById("search").value='';
+document.getElementById("search").focus();
 }
+
 
