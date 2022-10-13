@@ -59,7 +59,7 @@ function setLocalStorage(){
 //read city lat log
 function readCityLocation(sCityName) {
     let nLat, nLong;
-    sUrlApi='http://api.openweathermap.org/geo/1.0/direct?q='+sCityName+'&limit=1&appid='+sApiKey;
+    sUrlApi='https://api.openweathermap.org/geo/1.0/direct?q='+sCityName+'&limit=1&appid='+sApiKey;
     fetch(sUrlApi)
     .then(function(response){ return response.json()})
     .then(function(aResp){
