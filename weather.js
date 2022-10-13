@@ -75,3 +75,14 @@ function readCityLocation(sCityName) {
         }
     });
 }
+function readCityForecast(sCityName, nLat, nLong) {
+    let aListForecast;
+    sUrlApi='https://api.openweathermap.org/data/2.5/forecast?lat='+nLat+'&lon='+nLong+'&units=imperial&appid='+sApiKey;
+    fetch(sUrlApi)
+    .then(function(response){ return response.json()})
+    .then(function(oResp){
+        aListForecast = oResp.list;
+        processForecast(sCityName, aListForecast);
+        createForecastCard(aListForecast);
+    });
+}
