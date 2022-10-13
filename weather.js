@@ -1,41 +1,35 @@
 let aCityList = [];//store array search list
-const ulCityList = document.getElementById('historyList');//unordered list city data
-const nMaxHistoryStored=5; //sets the number of stored history items to only 5
-const sApiKey='2679b512ffea0aa250ddb289f6418fe6'; //string is an API key being used to fetch data
-let sUrlApi; //url api data will be in string format
-
-
-
+const ulCityList = document.getElementById('historyList');
+const nMaxHistoryStored=5;
+const sApiKey='b770f57e978766f2053f83e0edd11415';
+let sUrlApi;
 document.getElementById('submit').addEventListener("click", function () {
     const sCityName = document.getElementById("search").value;
     validateUserInput(sCityName);
-
 });
 
 //Ensure user input has valid city name and length
 function validateUserInput(sCityName) {
     if (sCityName === null || sCityName.length < 4) 
-        return; //will stop the function based on above params
+        return; 
     readCityLocation(sCityName);
-    
 }
 //Stores user history in list item format 
 function storeUserHistory(sCityName){
-//console.log(sCityName);
-    if(aCityList.length >= nMaxHistoryStored) //validate history length
-        removeOldHistory(); 
-        aCityList.push(sCityName); //add to list array
-        setLocalStorage();
-        cleanList();
-        loadHistory();   
-//clears and focus search input
-document.getElementById("search").value='';
-document.getElementById("search").focus();
+    if(aCityList.length>=nMaxHistoryStored)//validate history lenght
+        removeOldHistory();
+    aCityList.push(sCityName);//add to list array
+    setLocalStorage();
+    cleanList();
+    loadHistory();
+    //clears and focus search input
+    document.getElementById("search").value='';
+    document.getElementById("search").focus();
 }
 //loads city history
 function loadHistory() {
     aCityList = localStorage.getItem('CityH') ? localStorage.getItem('CityH').split(',') : [];
-    for (let index = aCityList.length-1; index >= 0 ; index--) {//for statement to reverse loop to create elements
+    for (let index = aCityList.length-1; index >= 0 ; index--) {//revere loop to create elements
         const sCityNameLoop = aCityList[index];
         createHistoryItem(sCityNameLoop);
     }
@@ -60,7 +54,9 @@ function removeOldHistory(){
 function setLocalStorage(){
     localStorage.setItem('CityH', aCityList);
 }
-//API will read and load lat and long data
+
+/** API **/
+//read city lat log
 function readCityLocation(sCityName) {
     let nLat, nLong;
     sUrlApi='http://api.openweathermap.org/geo/1.0/direct?q='+sCityName+'&limit=1&appid='+sApiKey;
@@ -75,29 +71,18 @@ function readCityLocation(sCityName) {
         }
     });
 }
-function readCityForecast(sCityName, nLat, nLong) {
-    let aListForecast;
-    sUrlApi='https://api.openweathermap.org/data/2.5/forecast?lat='+nLat+'&lon='+nLong+'&units=imperial&appid='+sApiKey;
-    fetch(sUrlApi)
-    .then(function(response){ return response.json()})
-    .then(function(oResp){
-        aListForecast = oResp.list;
-        processForecast(sCityName, aListForecast);
-        createForecastCard(aListForecast);
-    });
-}
-//Process data sent by the api
-function processForecast(sCityName, aListForecast){
-    let oMainData = aListForecast[0],
-        nHumidity = oMainData.main.humidity,
-        nTemp = oMainData.main.temp,
-        nWind = oMainData.wind.speed;
-    setMainData(sCityName, nHumidity, nTemp, nWind);
-}
-//set the information on page to be filled with API data
-function setMainData(sCityName, nHumidity, nTemp, nWind){
-    document.getElementById('humidity').innerHTML ='Humidity: '+nHumidity+' %';
-    document.getElementById('temp').innerHTML ='Temperature: '+nTemp+' °F';
-    document.getElementById('wind').innerHTML ='Wind: '+nWind+' MPH';
-    document.getElementById('CityName').innerHTML =sCityName;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+//Loads history on page ready
+loadHistory();
+
